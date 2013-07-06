@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MySalesforceMobileSDK.MySFOAuthCoordinator">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MySFOAuthCoordinator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySalesforceMobileSDK.MySFOAuthCredentials">
+    <Position X="3.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAgAAAAAAAACAEAAAAAAAAAAgAAAAAABEAA=</HashCode>
+      <FileName>MySFOAuthCredentials.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySalesforceMobileSDK.MySFRestAPI">
+    <Position X="6" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MySFRestAPI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySalesforceMobileSDK.MySFRestRequest">
+    <Position X="9" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MySFRestRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySalesforceMobileSDK.MySFSoqlHelper">
+    <Position X="11.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MySFSoqlHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySalesforceMobileSDK.MySFSoslHelper">
+    <Position X="14.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MySFSoslHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Meiryo UI" Size="9" />
+</ClassDiagram>

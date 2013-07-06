@@ -1,0 +1,28 @@
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\bin\Debug\MySalesforceMobileSDK.dll
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\bin\Debug\MySalesforceMobileSDK.pdb
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\bin\Debug\MySalesforceMobileSDK.pri
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\MySalesforceMobileSDK.dll
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\MySalesforceMobileSDK.pdb
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\priconfig.xml
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\layout.resfiles
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\resources.resfiles
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\pri.resfiles
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\LanguageQualifiers.txt
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDK\bin\Debug\MySalesforceMobileSDK.dll
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDK\bin\Debug\MySalesforceMobileSDK.pdb
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDK\bin\Debug\MySalesforceMobileSDK.pri
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\MySalesforceMobileSDK.dll
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\MySalesforceMobileSDK.pdb
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\priconfig.xml.intermediate
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\layout.resfiles.intermediate
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\resources.resfiles.intermediate
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\pri.resfiles.intermediate
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\priconfig.xml
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\layout.resfiles
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\resources.resfiles
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\pri.resfiles
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\LanguageQualifiers.txt
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\priconfig.xml.intermediate
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\layout.resfiles.intermediate
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\resources.resfiles.intermediate
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Debug\pri.resfiles.intermediate

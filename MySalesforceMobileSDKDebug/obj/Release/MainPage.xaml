@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="MySalesforceMobileSDKDebug.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MySalesforceMobileSDKDebug"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:ConnectionId='1' x:Name="btnTestOAuthAuthenticate" Content="TEST OAuth authenticate" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Height="38" Width="238"                                       />
+        <Button x:ConnectionId='2' x:Name="btnTestOAuthRefresh" Content="TEST OAuth refresh" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" Width="238"                                  />
+        <TextBox x:Name="txtAccountName" HorizontalAlignment="Left" Margin="13,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" Height="17" ToolTipService.ToolTip="Account Name"/>
+        <Button x:ConnectionId='3' x:Name="btnCreateObject" Content="TEST Create" HorizontalAlignment="Left" Margin="10,255,0,0" VerticalAlignment="Top" Width="238"                              />
+        <Button x:ConnectionId='4' Content="TEST Dialog" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Width="238"                     />
+        <Button x:ConnectionId='5' x:Name="testGetObject" Content="TEST Get Object" HorizontalAlignment="Left" Margin="10,349,0,0" VerticalAlignment="Top" Width="238"                            />
+        <TextBox x:Name="txtObjectIdForGet" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="13,312,0,0" Width="230"/>
+        <TextBox x:Name="txtObjectIdForUpdate" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="13,407,0,0" Width="230"/>
+        <Button x:ConnectionId='6' x:Name="testUpdateObject" Content="TEST Udate Object" HorizontalAlignment="Left" Margin="10,444,0,0" VerticalAlignment="Top" Width="238"                               />
+        <TextBox x:Name="txtObjectIdForDelete" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="13,498,0,0" Width="230"/>
+        <Button x:ConnectionId='7' x:Name="testDeleteObject" Content="TEST Udate Object" HorizontalAlignment="Left" Margin="10,535,0,0" VerticalAlignment="Top" Width="238"                               />
+        <Button x:ConnectionId='8' x:Name="btnTestOAuthRevokeToken" Content="TEST OAuth revoke" HorizontalAlignment="Left" Margin="10,154,0,0" VerticalAlignment="Top" Width="238"                                      />
+        <Button x:ConnectionId='9' x:Name="btnTestDescribeGlobal" Content="TEST Describe Global" HorizontalAlignment="Left" Margin="10,597,0,0" VerticalAlignment="Top" Width="233"                                    />
+        <Button x:ConnectionId='10' x:Name="btnTestDescribeObject" Content="TEST Describe Object" HorizontalAlignment="Left" Margin="10,655,0,0" VerticalAlignment="Top" Width="233"                                    />
+        <Button x:ConnectionId='11' x:Name="btnTestMetadataObject" Content="TEST Metadata Object" HorizontalAlignment="Left" Margin="10,710,0,0" VerticalAlignment="Top" Width="233"                                    />
+        <Button x:ConnectionId='12' x:Name="btnTestQuery" Content="TEST Query" HorizontalAlignment="Left" Margin="272,68,0,0" VerticalAlignment="Top" Width="233"                           />
+        <Button x:ConnectionId='13' x:Name="btnTestResource" Content="TEST Resource" HorizontalAlignment="Left" Margin="272,121,0,0" VerticalAlignment="Top" Width="233"                              />
+        <Button x:ConnectionId='14' x:Name="btnTestSearch" Content="TEST Search" HorizontalAlignment="Left" Margin="272,228,0,0" VerticalAlignment="Top" Width="233"                            />
+        <Button x:ConnectionId='15' x:Name="btnTestUpsert" Content="TEST Upsert Object" HorizontalAlignment="Left" Margin="272,289,0,0" VerticalAlignment="Top" Width="233"                            />
+        <TextBox x:Name="txtQuery" HorizontalAlignment="Left" Margin="272,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="523"/>
+        <TextBox x:Name="txtSosl" HorizontalAlignment="Left" Margin="272,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="523"/>
+
+    </Grid>
+</Page>
+

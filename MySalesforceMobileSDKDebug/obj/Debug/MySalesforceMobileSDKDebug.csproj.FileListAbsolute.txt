@@ -1,0 +1,56 @@
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\MySalesforceMobileSDKDebug.exe
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\MySalesforceMobileSDKDebug.pdb
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\resources.pri
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\AppxManifest.xml
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\MySalesforceMobileSDKDebug.build.appxrecipe
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\MySalesforceMobileSDK.dll
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\MySalesforceMobileSDK.pdb
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\MySalesforceMobileSDK.pri
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\MySalesforceMobileSDKDebug.csprojResolveAssemblyReference.cache
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\App.g.i.cs
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\App.g.cs
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\Common\StandardStyles.g.i.cs
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\Common\StandardStyles.g.cs
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\MainPage.g.i.cs
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\MainPage.g.cs
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\XamlTypeInfo.g.cs
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\App.xaml
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\Common\StandardStyles.xaml
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\MainPage.xaml
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\MySalesforceMobileSDKDebug.exe
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\MySalesforceMobileSDKDebug.pdb
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\MySalesforceMobileSDKDebug.csproj.GenerateResource.Cache
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\priconfig.xml
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\layout.resfiles
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\resources.resfiles
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\pri.resfiles
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\LanguageQualifiers.txt
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\ProjectArchitectures.txt
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\MySalesforceMobileSDKDebug.exe
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\MySalesforceMobileSDKDebug.pdb
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\resources.pri
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\AppxManifest.xml
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\MySalesforceMobileSDKDebug.build.appxrecipe
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\MySalesforceMobileSDK.dll
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\MySalesforceMobileSDK.pdb
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\MySalesforceMobileSDK.pri
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\MySalesforceMobileSDKDebug.csprojResolveAssemblyReference.cache
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\App.g.i.cs
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\App.g.cs
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\Common\StandardStyles.g.i.cs
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\Common\StandardStyles.g.cs
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\MainPage.g.i.cs
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\MainPage.g.cs
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\XamlTypeInfo.g.cs
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\App.xaml
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\Common\StandardStyles.xaml
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\MainPage.xaml
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\MySalesforceMobileSDKDebug.exe
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\MySalesforceMobileSDKDebug.pdb
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\MySalesforceMobileSDKDebug.csproj.GenerateResource.Cache
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\priconfig.xml
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\layout.resfiles
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\resources.resfiles
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\pri.resfiles
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\LanguageQualifiers.txt
+C:\Users\Yuji\Desktop\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\obj\Debug\ProjectArchitectures.txt

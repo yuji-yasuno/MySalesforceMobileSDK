@@ -1,0 +1,10 @@
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\bin\Release\MySalesforceMobileSDK.dll
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\bin\Release\MySalesforceMobileSDK.pdb
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\bin\Release\MySalesforceMobileSDK.pri
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Release\MySalesforceMobileSDK.dll
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Release\MySalesforceMobileSDK.pdb
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Release\priconfig.xml
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Release\layout.resfiles
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Release\resources.resfiles
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Release\pri.resfiles
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\obj\Release\LanguageQualifiers.txt

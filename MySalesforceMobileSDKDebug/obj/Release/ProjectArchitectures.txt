@@ -1,0 +1,2 @@
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\MySalesforceMobileSDK.csproj;neutral
+C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\MySalesforceMobileSDKDebug.csproj;neutral
