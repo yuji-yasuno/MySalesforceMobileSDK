@@ -108,6 +108,7 @@
     <Compile Include="MySFOAuthCredentials.cs" />
     <Compile Include="MySFOAuthEventHandler.cs" />
     <Compile Include="MySFRestAPI.cs" />
+    <Compile Include="MySFRestChatterAPI.cs" />
     <Compile Include="MySFRestEventArgs.cs" />
     <Compile Include="MySFRestRequest.cs" />
     <Compile Include="MySFSoqlHelper.cs" />

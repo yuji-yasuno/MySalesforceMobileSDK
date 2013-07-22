@@ -71,16 +71,92 @@ namespace MySalesforceMobileSDK
             return result;
         }
 
-        public HttpContent createContent(Dictionary<String, String> fields)
+        public HttpContent createContent(Dictionary<string, string> fields)
         {
             HttpContent content;
 
             JsonObject json = MySFMobileSdkUtil.createJsonFromObject(fields);
             String body = json.Stringify();
-            Byte[] bodyBytes = Encoding.UTF8.GetBytes(body);
-            content = new StreamContent(new MemoryStream(bodyBytes));
+            Byte[] bodyBytes = Encoding.Unicode.GetBytes(body);
+            Byte[] bodyBytesUtf8 = Encoding.Convert(Encoding.Unicode, Encoding.UTF8, bodyBytes);
+            content = new StreamContent(new MemoryStream(bodyBytesUtf8));
             content.Headers.ContentType = new MediaTypeHeaderValue(@"application/json");
+            content.Headers.ContentType.CharSet = @"UTF-8";
+            content.Headers.ContentLength = bodyBytesUtf8.Length;
+            
+
+            return content;
+        }
+
+        public HttpContent createContentFromJson(Dictionary<string, JsonObject> fields, String disposition = null, String dispositionName = null)
+        {
+            HttpContent content;
+
+            JsonObject json = MySFMobileSdkUtil.createJsonFromObject(fields);
+            String body = json.Stringify();
+            Byte[] bodyBytes = Encoding.Unicode.GetBytes(body);
+            Byte[] bodyBytesUtf8 = Encoding.Convert(Encoding.Unicode, Encoding.UTF8, bodyBytes);
+            content = new StreamContent(new MemoryStream(bodyBytesUtf8));
+            content.Headers.ContentType = new MediaTypeHeaderValue(@"application/json");
+            content.Headers.ContentType.CharSet = @"UTF-8";
+            content.Headers.ContentLength = bodyBytesUtf8.Length;
+            if (disposition != null) {
+                content.Headers.ContentDisposition = new ContentDispositionHeaderValue(disposition);
+                if (dispositionName != null)
+                {
+                    content.Headers.ContentDisposition.Name = dispositionName;
+                }
+            }
+
+            return content;
+        }
+
+        public HttpContent createContentForAttachingNewFile(Byte[] fileData, String disposition = null, String dispositionName = null, String dispositionFileName = null)
+        {
+            HttpContent content;
+
+            Byte[] bodyBytes = fileData;
+            content = new StreamContent(new MemoryStream(bodyBytes));
+            content.Headers.ContentType = new MediaTypeHeaderValue(@"application/octet-stream");
             content.Headers.ContentLength = bodyBytes.Length;
+            
+            if (disposition != null)
+            {
+                content.Headers.ContentDisposition = new ContentDispositionHeaderValue(disposition);
+                if (dispositionName != null) {
+                    content.Headers.ContentDisposition.Name = dispositionName;
+                }
+                if (dispositionFileName != null) {
+                    content.Headers.ContentDisposition.FileName = dispositionFileName;
+                }
+            }
+
+            return content;
+        }
+
+        public HttpContent createContentFromJsonWithExtraFields(Dictionary<string, JsonObject> fields, Dictionary<string, string> extrafields, String disposition = null, String dispositionName = null)
+        {
+            HttpContent content;
+
+            JsonObject json = MySFMobileSdkUtil.createJsonFromObject(fields);
+            foreach (KeyValuePair<string, string> pair in extrafields) {
+                json.Add(pair.Key, JsonValue.CreateStringValue(pair.Value));
+            }
+            String body = json.Stringify();
+            Byte[] bodyBytes = Encoding.Unicode.GetBytes(body);
+            Byte[] bodyBytesUtf8 = Encoding.Convert(Encoding.Unicode, Encoding.UTF8, bodyBytes);
+            content = new StreamContent(new MemoryStream(bodyBytesUtf8));
+            content.Headers.ContentType = new MediaTypeHeaderValue(@"application/json");
+            content.Headers.ContentType.CharSet = @"UTF-8";
+            content.Headers.ContentLength = bodyBytesUtf8.Length;
+            if (disposition != null)
+            {
+                content.Headers.ContentDisposition = new ContentDispositionHeaderValue(disposition);
+                if (dispositionName != null)
+                {
+                    content.Headers.ContentDisposition.Name = dispositionName;
+                }
+            }
 
             return content;
         }
@@ -89,12 +165,58 @@ namespace MySalesforceMobileSDK
         {
             HttpContent content;
 
-            Byte[] bodyBytes = Encoding.UTF8.GetBytes(body);
-            content = new StreamContent(new MemoryStream(bodyBytes));
+            Byte[] bodyBytes = Encoding.Unicode.GetBytes(body);
+            Byte[] bodyBytesUtf8 = Encoding.Convert(Encoding.Unicode, Encoding.UTF8, bodyBytes);
+            content = new StreamContent(new MemoryStream(bodyBytesUtf8));
             content.Headers.ContentType = new MediaTypeHeaderValue(@"application/json");
-            content.Headers.ContentLength = bodyBytes.Length;
+            content.Headers.ContentType.CharSet = @"UTF-8";
+            content.Headers.ContentLength = bodyBytesUtf8.Length;
 
             return content;
+        }
+
+        public MultipartFormDataContent createMultiPartContent(String boundary, HttpContent[] contents)
+        {
+            MultipartFormDataContent multiContent = new MultipartFormDataContent(boundary);
+            foreach (HttpContent content in contents) 
+            {
+                multiContent.Add(content);
+            }
+            return multiContent;
+        }
+
+        public String createContentString(Dictionary<string, string> fields)
+        {
+            String result;
+
+            JsonObject json = MySFMobileSdkUtil.createJsonFromObject(fields);
+            result = json.Stringify();
+
+            return result;
+        }
+
+        public String createContentString(Dictionary<string, JsonObject> fields, Dictionary<string, string> extrafields)
+        {
+            String result;
+
+            JsonObject json = MySFMobileSdkUtil.createJsonFromObject(fields);
+            foreach (KeyValuePair<string, string> pair in extrafields)
+            {
+                json.Add(pair.Key, JsonValue.CreateStringValue(pair.Value));
+            }
+            result = json.Stringify();
+
+            return result;
+        }
+
+        public String createContentStrinFromJson(Dictionary<string, JsonObject> fields)
+        {
+            String result;
+
+            JsonObject json = MySFMobileSdkUtil.createJsonFromObject(fields);
+            result = json.Stringify();
+
+            return result;
         }
 
         public static MySFRestRequest createNewRequestFromCredentials(MySFOAuthCredentials credentials) 

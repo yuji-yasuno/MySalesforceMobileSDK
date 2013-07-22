@@ -1,0 +1,110 @@
+//
+//	MySFRestAPI for Windows 8のデザイン
+//
+
+/*
+■OAuthフロー実行のためのクラス
+SFOAuthCoordinator							⇒　MySFOAuthCoordinator
+
+■OAuth認可のための情報を保持するためのクラス
+SFOAuthCredentials							⇒　MyOAuthCredentials
+
+■REST APIを利用するためのクラス
+SFRestAPI									⇒　MySFRestAPI
+SFRestRequest								⇒　MySFRestRequest : 
+
+■ヘルパークラス
+MySFSoqlHelper
+MySFSoslHelper
+*/
+
+
+// ■使い方の想定
+var api = MySFOAuthCoordinator.sharedInstance();
+
+api.onCompletedAuthorization += func1;
+api.onFailedAuthorization += func2;
+api.onCanceledAuthorization += func3;
+api.onCompletedLoadResponse += func4;
+api.onFailedLoadResponse += func5;
+api.onCanceldLoadResponse += func6;
+api.onTimeoutLoadResponse += func7;
+
+// Authorization
+MyOAuthCredentials credentials = new MyOAuthCredentials("client_id", "callback", "client_secret", "scope");
+api.coordinator = new MySFOAuthCoordinator(credentials);
+api.authorize();
+
+
+// Request
+MySFRestRequest request = api.requestFor*(params);
+api.send(request);
+
+
+// To Do
+/*
+・MyOAuthCredentialsの実装
+-> domain プロパティ
+-> clientId プロパティ
+-> redirectUri プロパティ
+-> client_secret プロパティ
+-> refreshToken プロパティ
+-> accessToken プロパティ
+-> instanceUrl プロパティ
+-> scope プロパティ
+
+・MySFOAuthCoordinatorの実装
+-> credentials プロパティ
+-> timeout プロパティ
+-> onCompletedAuthorization(Object sender, MySFOAuthEventArgs e) イベント
+-> onFailedAuthorization(Object sender, MySFOAuthEventArgs e) イベント
+-> onCanceledAuthorization(Object sender, MySFOAuthEventArgs e) イベント
+-> onCompletedLoadResponse(Object sender, MySFOAuthEventArgs e) イベント
+-> authorize() メソッド
+
+・MySFRestAPIの実装
+-> requestForCreateWithObjectType(String objectType, Dictionary fields) メソッド
+-> requestForDeleteWithObjectType(String objectType, String objectId) メソッド
+-> requestForDescribeGloba() メソッド
+-> requestForDescribeWithObjectType(String objectType) メソッド
+-> requestForMetadataWithObjectType(String objectType) メソッド
+-> requestForQuery(String soql) メソッド
+-> requestForResources() メソッド
+-> requestForRetrieveWithObjectType(String objectType, String objectId, Dictionary fieldList) メソッド
+-> requestForSearch(String sosl) メソッド
+-> requestForUpdateWithObjectType(String objectType, String objectId, Dictionary fields) メソッド
+-> requestForUpsertObjectType(String objectType,String externalIdField, Dictionary fields) メソッド
+-> requestForVersions() メソッド
+-> send(MySFRestRequest request) メソッド
+-> onCompletedLoadResponse(Object sender, MySFRestEventArgs e) イベント
+-> onFailedLoadResponse(Object sender, MySFRestEventArgs e) イベント
+-> onCanceldLoadResponse(Object sender, MySFRestEventArgs e) イベント
+-> onTimeoutLoadResponse(Object sender, MySFRestEventArgs e) イベント
+
+・MySFSoqlHelper
+-> SOQLQueryWithFields(List<String> fields, String sobject, String where, List<String> groupBy, String having, List<String> orderBy, Integer limit) メソッド
+-> SOQLQueryWithFields(List<String> fields, String sobject, String where, Integer limit) メソッド
+
+・MySFSoslHelper
+-> SOSLSearchWithSearchTerm(String term, String, fieldScope, Dictionary objectScope, Interger limit) メソッド
+-> SOSLSearchWithSearchTerm(String term, Dictionary objectScope) メソッド
+
+*/
+
+
+MySFRestChatterAPI
+requestForNewsFeed() 自分のFeed
+requestForNewsFeed(String userId) 他人のFeed
+requestForProfileFeed()
+requestForProfileFeed(String userId)
+requestForRecordFeed(String recordId)
+requestForFeedItem(String feedId)
+requestForFeedItemComment(String feedId)
+requestForFeedItemLikes(String feedId)
+requestForCreateFeedItem()
+requestForCreateFeedItemToUser(String userId)
+requestForCreateFeedItemToRecord(String recordId)
+requestForCreateComment(String feedId)
+requestForCreateLike(String feedOrCommentId)
+
+requestFor

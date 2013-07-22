@@ -5,7 +5,7 @@
     <WindowsUser>Yuji Yasuno</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>69D91C7F71B169626A238CE382EC0451C7D50F8EF91DB3439F8DECA0D28F6306</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>BC6999795A8FBAAAA2E0A5115F70A81A0B5B3CC335030BF3F3561B1AA3A826AD</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>4b9f2160-54c6-459c-9462-d22ef81db0d2_1.0.0.0_neutral__qjb2j4ndf8fzw</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>4b9f2160-54c6-459c-9462-d22ef81db0d2_qjb2j4ndf8fzw!App</RegisteredUserModeAppID>
     <RegisteredPackageID>4b9f2160-54c6-459c-9462-d22ef81db0d2</RegisteredPackageID>
@@ -16,25 +16,25 @@
     <AppXManifest Include="C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-02T13:43:07.029</Modified>
+      <Modified>2013-07-21T12:24:51.974</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\MySalesforceMobileSDKDebug.exe">
       <PackagePath>MySalesforceMobileSDKDebug.exe</PackagePath>
-      <Modified>2013-07-06T09:41:27.711</Modified>
+      <Modified>2013-07-22T15:00:29.134</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\MySalesforceMobileSDKDebug.pdb">
       <PackagePath>MySalesforceMobileSDKDebug.pdb</PackagePath>
-      <Modified>2013-07-06T09:41:27.689</Modified>
+      <Modified>2013-07-22T15:00:29.114</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\bin\Debug\MySalesforceMobileSDK.pdb">
       <PackagePath>MySalesforceMobileSDK.pdb</PackagePath>
-      <Modified>2013-07-06T09:41:26.871</Modified>
+      <Modified>2013-07-22T15:00:27.921</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\bin\Debug\MySalesforceMobileSDK.dll">
       <PackagePath>MySalesforceMobileSDK.dll</PackagePath>
-      <Modified>2013-07-06T09:41:26.892</Modified>
+      <Modified>2013-07-22T15:00:27.942</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>
@@ -66,11 +66,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\MainPage.xaml">
       <PackagePath>MainPage.xaml</PackagePath>
-      <Modified>2013-07-06T09:05:27.552</Modified>
+      <Modified>2013-07-22T15:00:27.614</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-07-02T13:43:06.666</Modified>
+      <Modified>2013-07-21T12:24:51.349</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

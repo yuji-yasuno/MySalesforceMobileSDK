@@ -14,7 +14,7 @@
 	<key>BackgroundGraphic</key>
 	<dict>
 		<key>Bounds</key>
-		<string>{{0, 0}, {559.00002670288086, 783}}</string>
+		<string>{{0, 0}, {558.99997329711914, 783}}</string>
 		<key>Class</key>
 		<string>SolidGraphic</string>
 		<key>ID</key>
@@ -46,7 +46,7 @@
 	<key>Creator</key>
 	<string>楊野 勇智</string>
 	<key>DisplayScale</key>
-	<string>1 0/72 in = 1 0/72 in</string>
+	<string>1 0/72 in = 1.0000 in</string>
 	<key>GraphDocumentVersion</key>
 	<integer>8</integer>
 	<key>GraphicsList</key>
@@ -171,7 +171,7 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{120.80000305175781, 451.24473651894954}, {35, 28}}</string>
+			<string>{{120.80000305175781, 451.24473651894954}, {34, 28}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -944,7 +944,7 @@ UnAuthorized?}</string>
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2013-07-04 06:14:17 +0000</string>
+	<string>2013-07-12 03:09:11 +0000</string>
 	<key>Modifier</key>
 	<string>楊野 勇智</string>
 	<key>NotesVisible</key>
@@ -975,7 +975,7 @@ UnAuthorized?}</string>
 		<key>NSPaperSize</key>
 		<array>
 			<string>size</string>
-			<string>{595.00002670288086, 842}</string>
+			<string>{594.99997329711914, 842}</string>
 		</array>
 		<key>NSPrintReverseOrientation</key>
 		<array>
@@ -1034,7 +1034,7 @@ UnAuthorized?}</string>
 		<key>SidebarWidth</key>
 		<integer>120</integer>
 		<key>VisibleRegion</key>
-		<string>{{-89, -22}, {738.39999999999998, 827.20000000000005}}</string>
+		<string>{{-90, -22}, {738.39999999999998, 827.20000000000005}}</string>
 		<key>Zoom</key>
 		<real>1.25</real>
 		<key>ZoomValues</key>

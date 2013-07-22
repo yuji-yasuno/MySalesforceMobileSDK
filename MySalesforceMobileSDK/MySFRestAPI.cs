@@ -23,23 +23,24 @@ namespace MySalesforceMobileSDK
 
         #region Property
 
-        public MySFOAuthCoordinator coordinator { get; set; }
-        public String apiVersion { get; set; }
+        public static MySFOAuthCoordinator coordinator { get; set; }
+        public static String apiVersion { get; set; }
 
         #endregion
 
         #region Member
 
-        private static MySFRestAPI _instance;
-        private HttpMethod _prevRequestMethod;
-        private String _prevRequestUrl;
-        private String _prevRequestBody;
+        protected HttpMethod _prevRequestMethod;
+        protected String _prevRequestUrl;
+        protected String _prevRequestBody;
 
         #endregion
 
         #region Constractor
 
-        private MySFRestAPI() { }
+        public MySFRestAPI() {
+            
+        }
 
         #endregion
 
@@ -47,91 +48,91 @@ namespace MySalesforceMobileSDK
 
         public MySFRestRequest requestForCreateWithObjectType(string objectType, Dictionary<String, String> fields)
         {
-            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(this.coordinator.credentials);
+            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(MySFRestAPI.coordinator.credentials);
             request.Method = HttpMethod.Post;
-            request.RequestUri = request.createApiUri(this.apiVersion, @"/sobjects/" + objectType);
+            request.RequestUri = request.createApiUri(MySFRestAPI.apiVersion, @"/sobjects/" + objectType);
             request.Content = request.createContent(fields);
             return request;
         }
 
         public MySFRestRequest requestForDeleteWithObjectType(string objectType, string objectId)
         {
-            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(this.coordinator.credentials);
+            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(MySFRestAPI.coordinator.credentials);
             request.Method = HttpMethod.Delete;
-            request.RequestUri = request.createApiUri(this.apiVersion, @"/sobjects/" + objectType + @"/" + objectId);
+            request.RequestUri = request.createApiUri(MySFRestAPI.apiVersion, @"/sobjects/" + objectType + @"/" + objectId);
             return request;
         }
 
         public MySFRestRequest requestForDescribeGlobal()
         {
-            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(this.coordinator.credentials);
+            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(MySFRestAPI.coordinator.credentials);
             request.Method = HttpMethod.Get;
-            request.RequestUri = request.createApiUri(this.apiVersion, @"/sobjects");
+            request.RequestUri = request.createApiUri(MySFRestAPI.apiVersion, @"/sobjects");
             return request;
         }
 
         public MySFRestRequest requestForDescribeWithObjectType(string objectType)
         {
-            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(this.coordinator.credentials);
+            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(MySFRestAPI.coordinator.credentials);
             request.Method = HttpMethod.Get;
-            request.RequestUri = request.createApiUri(this.apiVersion, @"/sobjects/" + objectType + @"/describe");
+            request.RequestUri = request.createApiUri(MySFRestAPI.apiVersion, @"/sobjects/" + objectType + @"/describe");
             return request;
         }
 
         public MySFRestRequest requestForMetadataWithObjectType(string objectType)
         {
-            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(this.coordinator.credentials);
+            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(MySFRestAPI.coordinator.credentials);
             request.Method = HttpMethod.Get;
-            request.RequestUri = request.createApiUri(this.apiVersion, @"/sobjects/" + objectType);
+            request.RequestUri = request.createApiUri(MySFRestAPI.apiVersion, @"/sobjects/" + objectType);
             return request;
         }
 
         public MySFRestRequest requestForQuery(string soql)
         {
-            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(this.coordinator.credentials);
+            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(MySFRestAPI.coordinator.credentials);
             request.Method = HttpMethod.Get;
-            request.RequestUri = request.createApiUri(this.apiVersion, @"/query?q=" + WebUtility.UrlEncode(soql));
+            request.RequestUri = request.createApiUri(MySFRestAPI.apiVersion, @"/query?q=" + WebUtility.UrlEncode(soql));
             return request;
         }
 
         public MySFRestRequest requestForResources()
         {
-            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(this.coordinator.credentials);
+            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(MySFRestAPI.coordinator.credentials);
             request.Method = HttpMethod.Get;
-            request.RequestUri = request.createApiUri(this.apiVersion, @"/");
+            request.RequestUri = request.createApiUri(MySFRestAPI.apiVersion, @"/");
             return request;
         }
 
         public MySFRestRequest requestForRetrieveWithObjectType(string objectType, string objectId, List<String> fieldList)
         {
-            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(this.coordinator.credentials);
+            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(MySFRestAPI.coordinator.credentials);
             request.Method = HttpMethod.Get;
-            request.RequestUri = request.createApiUri(this.apiVersion, @"/sobjects/" + objectType + @"/" + objectId, fieldList);
+            request.RequestUri = request.createApiUri(MySFRestAPI.apiVersion, @"/sobjects/" + objectType + @"/" + objectId, fieldList);
             return request;
         }
 
         public MySFRestRequest requestForSearch(string sosl)
         {
-            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(this.coordinator.credentials);
+            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(MySFRestAPI.coordinator.credentials);
             request.Method = HttpMethod.Get;
-            request.RequestUri = request.createApiUri(this.apiVersion, @"/search?q=" + WebUtility.UrlEncode(sosl));
+            request.RequestUri = request.createApiUri(MySFRestAPI.apiVersion, @"/search?q=" + WebUtility.UrlEncode(sosl));
             return request;
         }
 
         public MySFRestRequest requestForUpdateWithObjectType(string objectType, string objectId, Dictionary<String, String> fields)
         {
-            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(this.coordinator.credentials);
+            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(MySFRestAPI.coordinator.credentials);
             request.Method = new HttpMethod("PATCH");
-            request.RequestUri = request.createApiUri(this.apiVersion, @"/sobjects/" + objectType + @"/" + objectId);
+            request.RequestUri = request.createApiUri(MySFRestAPI.apiVersion, @"/sobjects/" + objectType + @"/" + objectId);
             request.Content = request.createContent(fields);
             return request;
         }
 
-        public MySFRestRequest requestForUpsertObjectType(string objectType, string externalIdField, String externalId, Dictionary<String, String> fields)
+        public MySFRestRequest requestForUpsertObjectType(String objectType, String externalIdField, String externalId, Dictionary<String, String> fields)
         {
-            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(this.coordinator.credentials);
+            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(MySFRestAPI.coordinator.credentials);
             request.Method = new HttpMethod("PATCH");
-            request.RequestUri = request.createApiUri(this.apiVersion, @"/sobjects/" + objectType + @"/" + externalIdField + "/" + externalId);
+            request.RequestUri = request.createApiUri(MySFRestAPI.apiVersion, @"/sobjects/" + objectType + @"/" + externalIdField + "/" + externalId);
             request.Content = request.createContent(fields);
             return request;
         }
@@ -170,10 +171,10 @@ namespace MySalesforceMobileSDK
             if (!isRetry)
             {
                 if (response.StatusCode == HttpStatusCode.Unauthorized) {
-                    this.coordinator.onCompletedRefreshForRetry += coordinator_onCompletedRefreshForRetry;
-                    this.coordinator.onFailedRefreshForRetry += coordinator_onFailedRefreshForRetry;
-                    this.coordinator.onRequestFailedRefreshForRetry += coordinator_onRequestFailedRefreshForRetry;
-                    this.coordinator.refresh(true);
+                    MySFRestAPI.coordinator.onCompletedRefreshForRetry += coordinator_onCompletedRefreshForRetry;
+                    MySFRestAPI.coordinator.onFailedRefreshForRetry += coordinator_onFailedRefreshForRetry;
+                    MySFRestAPI.coordinator.onRequestFailedRefreshForRetry += coordinator_onRequestFailedRefreshForRetry;
+                    MySFRestAPI.coordinator.refresh(true);
                     return;
                 }
             }
@@ -219,17 +220,11 @@ namespace MySalesforceMobileSDK
             }
         }
 
-        public static MySFRestAPI getInstance() 
-        {
-            if (_instance == null) _instance = new MySFRestAPI();
-            return _instance;
-        }
-
         #endregion
 
         #region MySFOAuthcoordinator Events
 
-        private void coordinator_onCompletedRefreshForRetry(Object sender, MySFOAuthEventArgs e) 
+        protected void coordinator_onCompletedRefreshForRetry(Object sender, MySFOAuthEventArgs e) 
         {
             MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(e.credentials);
             request.Method = _prevRequestMethod;
@@ -241,7 +236,7 @@ namespace MySalesforceMobileSDK
             this.send(request, true); 
         }
 
-        private void coordinator_onFailedRefreshForRetry(Object sender, MySFOAuthEventArgs e)
+        protected void coordinator_onFailedRefreshForRetry(Object sender, MySFOAuthEventArgs e)
         {
             MySFRestEventArgs args = new MySFRestEventArgs();
             args.error = e.error;
@@ -251,7 +246,7 @@ namespace MySalesforceMobileSDK
             }
         }
 
-        private void coordinator_onRequestFailedRefreshForRetry(Object sender, MySFOAuthEventArgs e)
+        protected void coordinator_onRequestFailedRefreshForRetry(Object sender, MySFOAuthEventArgs e)
         {
             MySFRestEventArgs args = new MySFRestEventArgs();
             args.error = e.error;

@@ -18,7 +18,7 @@
         <TextBox x:Name="txtObjectIdForUpdate" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="13,407,0,0" Width="230"/>
         <Button x:Name="testUpdateObject" Content="TEST Udate Object" HorizontalAlignment="Left" Margin="10,444,0,0" VerticalAlignment="Top" Width="238" Click="testUpdateObject_Click"/>
         <TextBox x:Name="txtObjectIdForDelete" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="13,498,0,0" Width="230"/>
-        <Button x:Name="testDeleteObject" Content="TEST Udate Object" HorizontalAlignment="Left" Margin="10,535,0,0" VerticalAlignment="Top" Width="238" Click="testDeleteObject_Click"/>
+        <Button x:Name="testDeleteObject" Content="TEST Delete Object" HorizontalAlignment="Left" Margin="10,535,0,0" VerticalAlignment="Top" Width="238" Click="testDeleteObject_Click"/>
         <Button x:Name="btnTestOAuthRevokeToken" Content="TEST OAuth revoke" HorizontalAlignment="Left" Margin="10,154,0,0" VerticalAlignment="Top" Width="238" Click="btnTestOAuthRevokeToken_Click"/>
         <Button x:Name="btnTestDescribeGlobal" Content="TEST Describe Global" HorizontalAlignment="Left" Margin="10,597,0,0" VerticalAlignment="Top" Width="233" Click="btnTestDescribeGlobal_Click"/>
         <Button x:Name="btnTestDescribeObject" Content="TEST Describe Object" HorizontalAlignment="Left" Margin="10,655,0,0" VerticalAlignment="Top" Width="233" Click="btnTestDescribeObject_Click"/>
@@ -27,8 +27,44 @@
         <Button x:Name="btnTestResource" Content="TEST Resource" HorizontalAlignment="Left" Margin="272,121,0,0" VerticalAlignment="Top" Width="233" Click="btnTestResource_Click"/>
         <Button x:Name="btnTestSearch" Content="TEST Search" HorizontalAlignment="Left" Margin="272,228,0,0" VerticalAlignment="Top" Width="233" Click="btnTestSearch_Click"/>
         <Button x:Name="btnTestUpsert" Content="TEST Upsert Object" HorizontalAlignment="Left" Margin="272,289,0,0" VerticalAlignment="Top" Width="233" Click="btnTestUpsert_Click"/>
-        <TextBox x:Name="txtQuery" HorizontalAlignment="Left" Margin="272,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="523"/>
-        <TextBox x:Name="txtSosl" HorizontalAlignment="Left" Margin="272,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="523"/>
+        <TextBox x:Name="txtQuery" HorizontalAlignment="Left" Margin="272,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376"/>
+        <TextBox x:Name="txtSosl" HorizontalAlignment="Left" Margin="272,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="376"/>
+        <Button x:Name="btn_TestChatterNewsFeed" Content="TEST News Feed" HorizontalAlignment="Left" Margin="272,349,0,0" VerticalAlignment="Top" Width="233" Click="btn_TestChatterNewsFeed_Click"/>
+        <Button x:Name="btnTestChatterNewsFeedOfUser" Content="TEST User News Feed" HorizontalAlignment="Left" Margin="272,444,0,0" VerticalAlignment="Top" Width="233" Click="btnTestChatterNewsFeedOfUser_Click"/>
+        <TextBox x:Name="txtUserIdForNewsFeed" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="272,407,0,0" Width="230"/>
+        <Button x:Name="btnTestUserProfileFeed" Content="TEST Profile Feed" HorizontalAlignment="Left" Margin="272,498,0,0" VerticalAlignment="Top" Width="233" Click="btnTestUserProfileFeed_Click"/>
+        <Button x:Name="btnTestUserPfofileFeedOfUser" Content="TEST User Profile Feed" HorizontalAlignment="Left" Margin="272,597,0,0" VerticalAlignment="Top" Width="230" Click="btnTestUserPfofileFeedOfUser_Click"/>
+        <TextBox x:Name="txtUserIdForProfileFeed" HorizontalAlignment="Left" Margin="275,560,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230"/>
+        <Button x:Name="btnTestFollowingRecordFeed" Content="TEST Following Record Feed" HorizontalAlignment="Left" Margin="681,13,0,0" VerticalAlignment="Top" Width="248" Click="btnTestFollowingRecordFeed_Click"/>
+        <Button x:Name="btnTestRecordFeed" Content="TEST Record Feed" HorizontalAlignment="Left" Margin="681,120,0,0" VerticalAlignment="Top" Width="248" Click="btnTestRecordFeed_Click"/>
+        <TextBox x:Name="txtRcordIdForRecordFeed" HorizontalAlignment="Left" Margin="681,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
+        <TextBox x:Name="txtFeedItemId" HorizontalAlignment="Left" Margin="681,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
+        <Button x:Name="btnTestFeedItem" Content="TEST Feed Item" HorizontalAlignment="Left" Margin="681,234,0,0" VerticalAlignment="Top" Width="248" Click="btnTestFeedItem_Click"/>
+        <Button x:Name="btnTestFeedComments" Content="TEST Feed Comments" HorizontalAlignment="Left" Margin="681,274,0,0" VerticalAlignment="Top" Width="248" Click="btnTestFeedComments_Click"/>
+        <Button x:Name="btnTestFeedLikes" Content="TEST Feed Liles" HorizontalAlignment="Left" Margin="681,312,0,0" VerticalAlignment="Top" Width="248" Click="btnTestFeedLikes_Click"/>
+        <Button x:Name="btnTestToMeFeed" Content="TEST To Feed Me" HorizontalAlignment="Left" Margin="681,372,0,0" VerticalAlignment="Top" Width="248" Click="btnTestToMeFeed_Click"/>
+        <Button x:Name="btnTestToUserFeed" Content="TEST To Feed User" HorizontalAlignment="Left" Margin="681,462,0,0" VerticalAlignment="Top" Width="248" Click="btnTestToUserFeed_Click"/>
+        <TextBox x:Name="txtUserIdForToFeed" HorizontalAlignment="Left" Margin="681,425,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
+        <TextBox x:Name="txtExistingContentId" HorizontalAlignment="Left" Margin="681,519,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
+        <Button x:Name="btnTestNewsFeedWithExistingContent" Content="TEST Feed With Existing Content" HorizontalAlignment="Left" Margin="681,559,0,0" VerticalAlignment="Top" Width="248" Click="btnTestNewsFeedWithExistingContent_Click"/>
+        <TextBox x:Name="txtRecordId2" HorizontalAlignment="Left" Margin="681,616,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
+        <TextBox x:Name="txtExistingContentId2" HorizontalAlignment="Left" Margin="681,654,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
+        <Button x:Name="btnTestRecordFeedOfAttachingExistingContent" Content="TEST Record Feed With Existing Content" HorizontalAlignment="Left" Margin="681,691,0,0" VerticalAlignment="Top" Width="305" Click="btnTestRecordFeedOfAttachingExistingContent_Click"/>
+        <Button x:Name="btnTestNewsFeedWithNewFile" Content="TEST News Feed with New File" HorizontalAlignment="Left" Margin="1026,14,0,0" VerticalAlignment="Top" Width="330" Click="btnTestNewsFeedWithNewFile_Click"/>
+        <Button x:Name="btnTestRecordFeedWithNewFile" Content="TEST Record Feed with New File" HorizontalAlignment="Left" Margin="1026,111,0,0" VerticalAlignment="Top" Width="330" Click="btnTestRecordFeedWithNewFile_Click"/>
+        <TextBox x:Name="txtRecordId" HorizontalAlignment="Left" Margin="1026,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
+        <Button x:Name="btnTestNewsFeedWithLink" Content="TEST News Feed with Link" HorizontalAlignment="Left" Margin="1026,174,0,0" VerticalAlignment="Top" Width="330" Click="btnTestNewsFeedWithLink_Click"/>
+        <Button x:Name="btnTestRecordFeedWithLink" Content="TEST Record Feed with Link" HorizontalAlignment="Left" Margin="1026,274,0,0" VerticalAlignment="Top" Width="330" Click="btnTestRecordFeedWithLink_Click"/>
+        <TextBox x:Name="txtRecordId3" HorizontalAlignment="Left" Margin="1026,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
+        <TextBox x:Name="txtFeedItemId2" HorizontalAlignment="Left" Margin="1026,349,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
+        <Button x:Name="btnTestFeedComment" Content="TEST Feed Comment" HorizontalAlignment="Left" Margin="1026,386,0,0" VerticalAlignment="Top" Width="330" Click="btnTestFeedComment_Click"/>
+        <TextBox x:Name="txtFeedItemId3" HorizontalAlignment="Left" Margin="1026,450,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
+        <TextBox x:Name="txtContentId3" HorizontalAlignment="Left" Margin="1026,487,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
+        <Button x:Name="btnTestFeedCommentWithExistingContent" Content="TEST Feed Comment with Existing File" HorizontalAlignment="Left" Margin="1026,535,0,0" VerticalAlignment="Top" Width="330" Click="btnTestFeedCommentWithExistingContent_Click"/>
+        <TextBox x:Name="txtFeedItemId4" HorizontalAlignment="Left" Margin="1026,683,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
+        <Button x:Name="btnLikeFeedItem" Content="Test Like Feed" HorizontalAlignment="Left" Margin="1026,720,0,0" VerticalAlignment="Top" Width="330" Click="btnLikeFeedItem_Click"/>
+        <TextBox x:Name="txtFeedItem5" HorizontalAlignment="Left" Margin="1026,585,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
+        <Button x:Name="btnTestFeedCommentWithNewFile" Content="TEST Feed Comment with New File" HorizontalAlignment="Left" Margin="1026,628,0,0" VerticalAlignment="Top" Width="330" Click="btnTestFeedCommentWithNewFile_Click"/>
 
     </Grid>
 </Page>

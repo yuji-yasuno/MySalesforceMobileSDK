@@ -45,6 +45,15 @@ namespace MySalesforceMobileSDK
             return result;
         }
 
+        public static JsonObject createJsonFromObject(Dictionary<string, JsonObject> fields)
+        {
+            JsonObject result = new JsonObject();
+            foreach (KeyValuePair<string, JsonObject> pair in fields) {
+                result.Add(pair.Key, pair.Value);
+            }
+            return result;
+        }
+
         public static JsonValue createObjectFromJson(String jsonstr) 
         {
             JsonValue jsonval;

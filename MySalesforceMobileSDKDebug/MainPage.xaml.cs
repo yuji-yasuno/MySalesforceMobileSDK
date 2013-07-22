@@ -13,6 +13,10 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Popups;
 using Windows.ApplicationModel.Core;
+using Windows.Storage;
+using Windows.Storage.Pickers;
+using Windows.Storage.Streams;
+using System.Text;
 using MySalesforceMobileSDK;
 
 // 空白ページのアイテム テンプレートについては、http://go.microsoft.com/fwlink/?LinkId=234238 を参照してください
@@ -165,9 +169,9 @@ namespace MySalesforceMobileSDKDebug
 
         private MySFRestAPI getApi() 
         {
-            MySFRestAPI api = MySFRestAPI.getInstance();
-            api.apiVersion = @"v28.0";
-            api.coordinator = _coordinator;
+            MySFRestAPI api = new MySFRestAPI();
+            MySFRestAPI.coordinator = _coordinator;
+            MySFRestAPI.apiVersion = @"v28.0";
             api.onCanceldLoadResponse += sfapi_onCanceldLoadResponse;
             api.onCompletedLoadResponse += sfapi_onCompletedLoadResponse;
             api.onFailedLoadResponse += sfapi_onFailedLoadResponse;
@@ -321,5 +325,322 @@ namespace MySalesforceMobileSDKDebug
             api.send(request);
         }
 
+        private MySFChatterRestAPI getChatterApi()
+        {
+            MySFChatterRestAPI api = new MySFChatterRestAPI();
+            api.apiVersion = @"v28.0";
+            MySFChatterRestAPI.coordinator = _coordinator;
+            api.onCanceldLoadResponse += sfapi_onCanceldLoadResponse;
+            api.onCompletedLoadResponse += sfapi_onCompletedLoadResponse;
+            api.onFailedLoadResponse += sfapi_onFailedLoadResponse;
+            api.onFailedRetry += sfapi_onFailedRetry;
+            api.onTimeoutLoadResponse += sfapi_onTimeoutLoadResponse;
+            return api;
+        }
+
+        private void btn_TestChatterNewsFeed_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.newsFeed();
+        }
+
+        private void btnTestChatterNewsFeedOfUser_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.newsFeed(txtUserIdForNewsFeed.Text);
+        }
+
+        private void btnTestUserProfileFeed_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.profileFeed();
+        }
+
+        private void btnTestUserPfofileFeedOfUser_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.profileFeed(txtUserIdForProfileFeed.Text);
+        }
+
+        private void btnTestFollowingRecordFeed_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.recordFeed();
+        }
+
+        private void btnTestRecordFeed_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.recordFeed(txtRcordIdForRecordFeed.Text);
+        }
+
+        private void btnTestFeedItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.feedItem(txtFeedItemId.Text);
+        }
+
+        private void btnTestFeedComments_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.feedComments(txtFeedItemId.Text);
+        }
+
+        private void btnTestFeedLikes_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.feedLikes(txtFeedItemId.Text);
+        }
+
+        private void btnTestToMeFeed_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.feedToMe();
+        }
+
+        private void btnTestToUserFeed_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.feedToUser(txtUserIdForToFeed.Text);
+        }
+
+        private void btnTestNewsFeedWithExistingContent_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.createNewsFeedAttachingExistingContent(txtExistingContentId.Text, "TEST");
+        }
+
+        private void btnTestRecordFeedOfAttachingExistingContent_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.createRecordFeedAttachingExistingContent(txtExistingContentId2.Text, "TEST", txtRecordId2.Text);
+        }
+
+        private async void btnTestNewsFeedWithNewFile_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+
+            FileOpenPicker picker = new FileOpenPicker();
+            picker.ViewMode = PickerViewMode.List;
+            picker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+            picker.FileTypeFilter.Add("*");
+            StorageFile file = await picker.PickSingleFileAsync();
+            if (file != null) {
+                //showDebugMessage(file.Path);
+
+                Byte[] filebytes = null;
+                using (IRandomAccessStream stream = await file.OpenReadAsync()) 
+                {
+                    using(BinaryReader reader = new BinaryReader(stream.AsStream()))
+                    {
+                        filebytes = reader.ReadBytes((int)stream.Size);
+                    }
+                }
+                if (filebytes != null) {
+                    MySFChatterRestAPI api = getChatterApi();
+                    String ext = Path.GetExtension(file.Name);
+                    String newfilename = "MobileUpload" + DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Day.ToString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + ext;
+                    api.createNewsFeedAttachingNewFile(filebytes, newfilename, file.Name, "Test Upload", "This is a test."); 
+                }
+            }
+        }
+
+        private async void btnTestRecordFeedWithNewFile_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+
+            FileOpenPicker picker = new FileOpenPicker();
+            picker.ViewMode = PickerViewMode.List;
+            picker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+            picker.FileTypeFilter.Add("*");
+            StorageFile file = await picker.PickSingleFileAsync();
+
+            if (file != null)
+            {
+                //showDebugMessage(file.Path);
+
+                Byte[] filebytes = null;
+                using (IRandomAccessStream stream = await file.OpenReadAsync())
+                {
+                    using (BinaryReader reader = new BinaryReader(stream.AsStream()))
+                    {
+                        filebytes = reader.ReadBytes((int)stream.Size);
+                    }
+                }
+                if (filebytes != null)
+                {
+                    MySFChatterRestAPI api = getChatterApi();
+                    String ext = Path.GetExtension(file.Name);
+                    String newfilename = "MobileUpload" + DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Day.ToString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + ext;
+                    api.createRecordFeedAttachingNewFile(filebytes, newfilename, file.Name, "Test Upload", "This is a test.", txtRecordId.Text);
+                }
+            }
+        }
+
+        private void btnTestNewsFeedWithLink_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.createNewsFeedAttachingLink("http://www.google.co.jp/", "Google", "TEST");
+        }
+
+        private void btnTestRecordFeedWithLink_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.createRecordFeedAttachingLink("http://www.google.co.jp/", "Google", "TEST", txtRecordId3.Text);
+        }
+
+        private void btnTestFeedComment_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.createComment("This is a test comment",txtFeedItemId2.Text);
+        }
+
+        private void btnTestFeedCommentWithExistingContent_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.createCommenAttachingExistingContent(txtContentId3.Text, "This is a test comment", txtFeedItemId3.Text);
+        }
+
+        private void btnLikeFeedItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.createLikeToFeed(txtFeedItemId4.Text);
+        }
+
+        private async void btnTestFeedCommentWithNewFile_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+
+            FileOpenPicker picker = new FileOpenPicker();
+            picker.ViewMode = PickerViewMode.List;
+            picker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+            picker.FileTypeFilter.Add("*");
+            StorageFile file = await picker.PickSingleFileAsync();
+
+            if (file != null)
+            {
+                //showDebugMessage(file.Path);
+
+                Byte[] filebytes = null;
+                using (IRandomAccessStream stream = await file.OpenReadAsync())
+                {
+                    using (BinaryReader reader = new BinaryReader(stream.AsStream()))
+                    {
+                        filebytes = reader.ReadBytes((int)stream.Size);
+                    }
+                }
+                if (filebytes != null)
+                {
+                    MySFChatterRestAPI api = getChatterApi();
+                    String ext = Path.GetExtension(file.Name);
+                    String newfilename = "MobileUpload" + DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Day.ToString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + ext;
+                    api.createCommenAttachingNewFile(filebytes, newfilename, file.Name, "This is a test upload", "Test comment and upload new file", txtFeedItem5.Text);
+                }
+            }
+        }
+
+        
     }
 }
