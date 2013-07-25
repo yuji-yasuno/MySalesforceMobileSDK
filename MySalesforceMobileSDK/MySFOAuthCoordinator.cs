@@ -49,6 +49,9 @@ namespace MySalesforceMobileSDK
 
         public int timeout { get; set; }
         public MySFOAuthCredentials credentials { get; set; }
+        public JsonArray availableVersions { get; private set; }
+        public String latestVersion { get; private set; }
+        public MySFUserProfileInformation currentUser { get; private set; }
 
         #endregion
 
@@ -97,6 +100,14 @@ namespace MySalesforceMobileSDK
                     else if (String.Compare(pair.Key, PARAM_NAME_SCOPE) == 0) {
                         // nothing to do
                     }
+                }
+
+                this.availableVersions = await getAvailableVesions(this.credentials.instanceUrl.AbsoluteUri);
+                if (this.availableVersions != null) {
+                    this.latestVersion = analyzeLatestApiVersion(this.availableVersions);
+                }
+                if (this.latestVersion != null) {
+                    this.currentUser = await getCurrentUserProfileInformation(this.latestVersion);
                 }
 
                 if (onCompletedAuthorization != null) {
@@ -173,6 +184,17 @@ namespace MySalesforceMobileSDK
                     if (onCompletedRefreshForRetry != null) onCompletedRefreshForRetry(this, args);
                 }
                 else {
+
+                    this.availableVersions = await getAvailableVesions(this.credentials.instanceUrl.AbsoluteUri);
+                    if (this.availableVersions != null)
+                    {
+                        this.latestVersion = analyzeLatestApiVersion(this.availableVersions);
+                    }
+                    if (this.latestVersion != null)
+                    {
+                        this.currentUser = await getCurrentUserProfileInformation(this.latestVersion);
+                    }
+
                     if (onCompletedRefresh != null) onCompletedRefresh(this, args);
                 }
 
@@ -223,5 +245,82 @@ namespace MySalesforceMobileSDK
 
         #endregion
 
+        #region Private Methods
+
+        protected async Task<JsonArray> getAvailableVesions(String instanceUrl)
+        {
+            JsonArray result = null;
+
+            HttpClient client = new HttpClient(); 
+            HttpResponseMessage response = null;
+            try
+            {
+                response = await client.GetAsync(instanceUrl + @"services/data.json");
+            }
+            catch (HttpRequestException ex) 
+            {
+                return result;
+            }
+            
+            if (response.StatusCode != HttpStatusCode.OK) return result;
+
+            String responseBody = await response.Content.ReadAsStringAsync();
+            JsonValue responseJson = MySFMobileSdkUtil.createObjectFromJson(responseBody);
+            result = responseJson.GetArray();
+
+            return result;
+        }
+
+        protected String analyzeLatestApiVersion(JsonArray versions) {
+            String result = null;
+
+            Double latestVersionNum = 0.0;
+            String latestVersion = null;
+
+            for (uint ii = 0; ii < versions.Count; ii++) {
+
+                JsonObject version = versions.GetObjectAt(ii);
+                String versionStr = version.GetNamedString("version");
+                Double versionNum = Double.Parse(versionStr);
+
+                if (latestVersionNum < versionNum) {
+                    latestVersionNum = versionNum;
+                    latestVersion = "v" + versionStr;
+                }
+
+            }
+
+            result = latestVersion;
+            return result;
+        }
+
+        protected async Task<MySFUserProfileInformation> getCurrentUserProfileInformation(String apiver) 
+        {
+            MySFUserProfileInformation result = null;
+
+            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(this.credentials);
+            request.Method = HttpMethod.Get;
+            request.RequestUri = request.createApiUri(apiver, @"/chatter/users/me");
+
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = null;
+            try
+            {
+                response = await client.SendAsync(request);    
+            }
+            catch (HttpRequestException ex) 
+            {
+                return result;
+            }
+
+            if (response.StatusCode != HttpStatusCode.OK) return result;
+            String responseBody = await response.Content.ReadAsStringAsync();
+
+            JsonValue responseJson = MySFMobileSdkUtil.createObjectFromJson(responseBody);
+            result = MySFUserProfileInformation.createInstance(responseJson.GetObject());
+            return result;
+        }
+
+        #endregion
     }
 }

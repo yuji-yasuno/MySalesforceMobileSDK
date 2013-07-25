@@ -113,6 +113,7 @@
     <Compile Include="MySFRestRequest.cs" />
     <Compile Include="MySFSoqlHelper.cs" />
     <Compile Include="MySFSoslHelper.cs" />
+    <Compile Include="MySFUserProfileInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">

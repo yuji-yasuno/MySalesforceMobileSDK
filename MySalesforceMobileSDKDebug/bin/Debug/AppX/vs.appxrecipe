@@ -22,19 +22,19 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\MySalesforceMobileSDKDebug.exe">
       <PackagePath>MySalesforceMobileSDKDebug.exe</PackagePath>
-      <Modified>2013-07-22T15:00:29.134</Modified>
+      <Modified>2013-07-25T14:16:19.828</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\MySalesforceMobileSDKDebug.pdb">
       <PackagePath>MySalesforceMobileSDKDebug.pdb</PackagePath>
-      <Modified>2013-07-22T15:00:29.114</Modified>
+      <Modified>2013-07-25T14:16:19.809</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\bin\Debug\MySalesforceMobileSDK.pdb">
       <PackagePath>MySalesforceMobileSDK.pdb</PackagePath>
-      <Modified>2013-07-22T15:00:27.921</Modified>
+      <Modified>2013-07-25T14:16:18.745</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDK\bin\Debug\MySalesforceMobileSDK.dll">
       <PackagePath>MySalesforceMobileSDK.dll</PackagePath>
-      <Modified>2013-07-22T15:00:27.942</Modified>
+      <Modified>2013-07-25T14:16:18.768</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>
@@ -66,7 +66,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\MainPage.xaml">
       <PackagePath>MainPage.xaml</PackagePath>
-      <Modified>2013-07-22T15:00:27.614</Modified>
+      <Modified>2013-07-25T14:16:18.342</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Yuji Yasuno\SkyDrive\salesforce\Demo Componet\MySalesforceMobileSDK\MySalesforceMobileSDKDebug\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

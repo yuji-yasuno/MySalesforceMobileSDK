@@ -594,17 +594,6 @@ namespace MySalesforceMobileSDKDebug
             api.createCommenAttachingExistingContent(txtContentId3.Text, "This is a test comment", txtFeedItemId3.Text);
         }
 
-        private void btnLikeFeedItem_Click(object sender, RoutedEventArgs e)
-        {
-            if (_coordinator == null)
-            {
-                showDebugMessage("先に認証を行ってください");
-                return;
-            }
-            MySFChatterRestAPI api = getChatterApi();
-            api.createLikeToFeed(txtFeedItemId4.Text);
-        }
-
         private async void btnTestFeedCommentWithNewFile_Click(object sender, RoutedEventArgs e)
         {
             if (_coordinator == null)
@@ -641,6 +630,80 @@ namespace MySalesforceMobileSDKDebug
             }
         }
 
-        
+        private void btnLikeFeedItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.createLikeToFeed(txtFeedItemId4.Text);
+        }
+
+        private void btnTestUnLikeFeed_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.deleteLikeOfFeed(txtFeedItemId4.Text);
+        }
+
+        private void btnTestLikeComment_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.createLikeToComment(txtCommentId.Text);
+        }
+
+        private void btnUnLikeComment_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            MySFChatterRestAPI api = getChatterApi();
+            api.deleteLikeOfComment(txtCommentId.Text);
+        }
+
+        private void btnTestSOQLHelper_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            String soql = MySFSoqlHelper.SOQLQueryWithFields(new List<string> { "Id", "Name", "Owner" }, "AnnualRevenue", new List<string> { "Name = String", "Id != null" }, new List<string> { "AnnualRevenue" }, "AnnualRevenue > 10000", new List<string> { "Name", "Id" }, 100);
+            
+            MySFRestAPI api = getApi();
+            MySFRestRequest request = api.requestForQuery(soql);
+            api.send(request);
+        }
+
+        private void btnTestSOSLHelper_Click(object sender, RoutedEventArgs e)
+        {
+            if (_coordinator == null)
+            {
+                showDebugMessage("先に認証を行ってください");
+                return;
+            }
+            Dictionary<String, List<String>> returnObjs = new Dictionary<string, List<string>>();
+            returnObjs.Add("Account", new List<string> { "Name", "Id", "Phone" });
+            returnObjs.Add("Contact", new List<string> { "Name", "Id", "FirstName", "LastName" });
+            String sosl = MySFSoslHelper.SOSLSearchText("テスト", returnObjs, 100);
+            
+            MySFRestAPI api = getApi();
+            MySFRestRequest request = api.requestForSearch(sosl);
+            api.send(request);
+        } 
+
     }
 }

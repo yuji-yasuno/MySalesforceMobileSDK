@@ -447,20 +447,183 @@ namespace MySalesforceMobileSDK
             _api.send(request);
         }
 
-        public void deleteLikeToFeed(string feedItemId)
+        public void deleteLike(string likeId) 
         {
             MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(MySFChatterRestAPI.coordinator.credentials);
             request.Method = HttpMethod.Delete;
-            request.RequestUri = request.createApiUri(this.apiVersion, @"/chatter/feed-items/" + feedItemId + "/likes");
+            request.RequestUri = request.createApiUri(this.apiVersion, @"/chatter/likes/" + likeId);
             _api.send(request);
         }
 
-        public void deleteLikeToComment(string commentId)
+        public async void deleteLikeOfFeed(string feedItemId)
         {
             MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(MySFChatterRestAPI.coordinator.credentials);
-            request.Method = HttpMethod.Delete;
-            request.RequestUri = request.createApiUri(this.apiVersion, @"/chatter/comments/" + commentId + "/likes");
-            _api.send(request);
+            request.Method = HttpMethod.Get;
+            request.RequestUri = request.createApiUri(this.apiVersion, @"/chatter/feed-items/" + feedItemId + "/likes");
+
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = null;
+            try
+            {
+                response = await client.SendAsync(request);
+            }
+            catch (HttpRequestException ex) 
+            {
+                MySFRestEventArgs args1 = new MySFRestEventArgs();
+                args1.error = ex;
+                args1.status = response.StatusCode;
+                if (onFailedLoadResponse != null)
+                {
+                    onFailedLoadResponse(this, args1);
+                }
+                return;
+            }
+
+            String responseBody = await response.Content.ReadAsStringAsync();
+            MySFRestEventArgs args2 = new MySFRestEventArgs();
+            args2.status = response.StatusCode;
+            args2.responseData = MySFMobileSdkUtil.createObjectFromJson(responseBody);
+
+            switch (response.StatusCode)
+            {
+                case HttpStatusCode.OK:
+
+                    IJsonValue tmpvalue;
+                    Boolean isSuccessGet = false;
+
+                    JsonObject likesJson = args2.responseData.GetObject();
+                    isSuccessGet = likesJson.TryGetValue("likes", out tmpvalue);
+
+                    JsonArray likes = null;
+                    if (isSuccessGet) {
+                        likes = tmpvalue.ValueType == JsonValueType.Array ? tmpvalue.GetArray() : null;
+                    }
+
+                    Boolean isfindUser = findMyLikeAndDelete(likes);
+                    if (!isfindUser)
+                    {
+                        if (onCanceldLoadResponse != null)
+                        {
+                            onCanceldLoadResponse(this, args2);
+                        }
+                    }
+
+                    break;
+
+                case HttpStatusCode.PartialContent:
+                    if (onCanceldLoadResponse != null)
+                    {
+                        onCanceldLoadResponse(this, args2);
+                    }
+                    break;
+
+                case HttpStatusCode.RequestTimeout:
+                    if (onTimeoutLoadResponse != null)
+                    {
+                        onTimeoutLoadResponse(this, args2);
+                    }
+                    break;
+
+                case HttpStatusCode.Unauthorized:
+                    if (onFailedRetry != null)
+                    {
+                        onFailedRetry(this, args2);
+                    }
+                    break;
+
+                default:
+                    if (onFailedLoadResponse != null)
+                    {
+                        onFailedLoadResponse(this, args2);
+                    }
+                    break;
+            }
+        }
+
+        public async void deleteLikeOfComment(string commentId)
+        {
+            MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(MySFChatterRestAPI.coordinator.credentials);
+            request.Method = HttpMethod.Get;
+            request.RequestUri = request.createApiUri(this.apiVersion, @"/chatter/comments/" +commentId + "/likes");
+
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = null;
+            try
+            {
+                response = await client.SendAsync(request);
+            }
+            catch (HttpRequestException ex)
+            {
+                MySFRestEventArgs args1 = new MySFRestEventArgs();
+                args1.error = ex;
+                args1.status = response.StatusCode;
+                if (onFailedLoadResponse != null)
+                {
+                    onFailedLoadResponse(this, args1);
+                }
+                return;
+            }
+
+            String responseBody = await response.Content.ReadAsStringAsync();
+            MySFRestEventArgs args2 = new MySFRestEventArgs();
+            args2.status = response.StatusCode;
+            args2.responseData = MySFMobileSdkUtil.createObjectFromJson(responseBody);
+
+            switch (response.StatusCode)
+            {
+                case HttpStatusCode.OK:
+
+                    IJsonValue tmpvalue;
+                    Boolean isSuccessGet = false;
+
+                    JsonObject likesJson = args2.responseData.GetObject();
+                    isSuccessGet = likesJson.TryGetValue("likes", out tmpvalue);
+
+                    JsonArray likes = null;
+                    if (isSuccessGet)
+                    {
+                        likes = tmpvalue.ValueType == JsonValueType.Array ? tmpvalue.GetArray() : null;
+                    }
+
+                    Boolean isfindUser = findMyLikeAndDelete(likes);
+                    if (!isfindUser)
+                    {
+                        if (onCanceldLoadResponse != null)
+                        {
+                            onCanceldLoadResponse(this, args2);
+                        }
+                    }
+
+                    break;
+
+                case HttpStatusCode.PartialContent:
+                    if (onCanceldLoadResponse != null)
+                    {
+                        onCanceldLoadResponse(this, args2);
+                    }
+                    break;
+
+                case HttpStatusCode.RequestTimeout:
+                    if (onTimeoutLoadResponse != null)
+                    {
+                        onTimeoutLoadResponse(this, args2);
+                    }
+                    break;
+
+                case HttpStatusCode.Unauthorized:
+                    if (onFailedRetry != null)
+                    {
+                        onFailedRetry(this, args2);
+                    }
+                    break;
+
+                default:
+                    if (onFailedLoadResponse != null)
+                    {
+                        onFailedLoadResponse(this, args2);
+                    }
+                    break;
+            }
         }
 
         #endregion
@@ -561,6 +724,42 @@ namespace MySalesforceMobileSDK
             typeSegmentFields.Add("url", url);
             result = MySFMobileSdkUtil.createJsonFromObject(typeSegmentFields);
 
+            return result;
+        }
+
+        protected Boolean findMyLikeAndDelete(JsonArray likes) 
+        {
+            Boolean result = false;
+            if (likes == null) return result;
+            for (uint ii = 0; ii < likes.Count; ii++)
+            {
+                IJsonValue tmpvalue;
+                Boolean isSuccessGet;
+                
+                JsonObject likeJson = likes.GetObjectAt(ii);
+                isSuccessGet = likeJson.TryGetValue("user", out tmpvalue);
+                if (!isSuccessGet) continue;
+
+                JsonObject userJson = tmpvalue.ValueType == JsonValueType.Object ? tmpvalue.GetObject() : null;
+                isSuccessGet = userJson.TryGetValue("id", out tmpvalue);
+                if (!isSuccessGet) continue;
+
+                String uid = tmpvalue.ValueType == JsonValueType.String ? tmpvalue.GetString() : null;
+                if (String.Compare(uid, MySFChatterRestAPI.coordinator.currentUser.id) == 0)
+                {
+                    isSuccessGet = likeJson.TryGetValue("id", out tmpvalue);
+                    if (!isSuccessGet) continue;
+
+                    String likeId = tmpvalue.ValueType == JsonValueType.String ? tmpvalue.GetString() : null;
+                    MySFRestRequest request = MySFRestRequest.createNewRequestFromCredentials(MySFChatterRestAPI.coordinator.credentials);
+                    request.Method = HttpMethod.Delete;
+                    request.RequestUri = request.createApiUri(this.apiVersion, @"/chatter/likes/" + likeId);
+                    _api.send(request);
+
+                    result = true;
+                    break;
+                }
+            }
             return result;
         }
 
